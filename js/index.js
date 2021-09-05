@@ -74,7 +74,7 @@
 //то вывести строку "Здравствуйте!"
 //иначе выводить строку "Неверный пароль!"
 
-const userLogin = prompt("ВВедите логин");
+// const userLogin = prompt("ВВедите логин");
 
 
 // if (userLogin === "Админ") {
@@ -94,28 +94,62 @@ const userLogin = prompt("ВВедите логин");
 //     console.log("Я Вас не знаю");
 // }
 
-switch (userLogin) {
-    case "Админ":
-        const password = prompt("Введите пароль");
-        switch (password) {
-            case "Я главный":
-                console.log("Здравствуйте!");
-                break;
+// switch (userLogin) {
+//     case "Админ":
+//         const password = prompt("Введите пароль");
+//         switch (password) {
+//             case "Я главный":
+//                 console.log("Здравствуйте!");
+//                 break;
             
-            case null:
-                console.log("Отмена");
-break;
-            default:
-                console.log("Неверный пароль!");
+//             case null:
+//                 console.log("Отмена");
+// break;
+//             default:
+//                 console.log("Неверный пароль!");
                 
-        }
-        break;
+//         }
+//         break;
     
-    case null:
-        console.log("Отмена");
-        break;
+//     case null:
+//         console.log("Отмена");
+//         break;
     
-    default:
-        console.log("Я Вас не знаю");
+//     default:
+//         console.log("Я Вас не знаю");
         
-}
+// }
+
+//5. При загрузке страницы пользователю предлагается
+//в prompt ввести число. Ввод добавляется к начению
+//переменной total.
+//Операция ввода числа продолжается до тех пор,
+//пока пользователь не нажмет кнопку Cancel в prompt.
+//После того как пользователь прекратил ввод нажав на
+//кнопку Cancel, показать alert со строкой "Общая сумма введенных чисел равна [число]."
+//Делать проверку,что пользователь ввел именно число,
+//а не произвольный набор символов, не нужно.
+
+let number = prompt("Введите число!");
+
+let total = 0;
+let check = false;
+
+// while (number) {
+
+//     total += Number(number);
+//     number = prompt("Введите число!");
+// }
+
+do {
+    if (number) {
+        check = true;
+        total += Number(number);
+        number = prompt("Введите число!");
+    } else {
+        check = false;
+        console.log(total);
+    }
+} while(check) 
+
+
