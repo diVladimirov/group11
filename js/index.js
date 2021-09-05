@@ -38,22 +38,84 @@
 
 //3. Напишите цыкл, который выводит в консоль
 //числа от max до min по убыванию
-// При помощи цыкла for додайте все четные числа от   min до max
-const max = 50;
-const min = 23;
+// // При помощи цыкла for додайте все четные числа от   min до max
+// const max = 50;
+// const min = 23;
 
-let totalSum = 0;
+// let totalSum = 0;
 
 
-for(let i = max; i > min; i--){
-    // console.log(i);
-    // console.log(i % 2)
-//     if(i % 2 !== 0) {
-// totalSum += i;
+// for(let i = max; i > min; i--){
+//     // console.log(i);
+//     // console.log(i % 2)
+// //     if(i % 2 !== 0) {
+// // totalSum += i;
+// //     }
+// if(i % 2 === 0) {
+//     continue 
+// }
+// totalSum +=i
+// }
+//     console.log(totalSum);
+
+
+//4. Напишите код, который будет спрашивать
+//логин с помощью prompt и логировать результат
+//в консоль браузера
+
+//Если посетитель вводит "Админ",
+//то prompt запрашивает пароль.
+//Если ничего не ввели или нажата клавиша Esc
+//вывести стороку "Отменено"
+//В противном случае вывксти строку "Я вас не знаю"
+
+//Пароль проверять так:
+//Если введён пароль "Я главный",
+//то вывести строку "Здравствуйте!"
+//иначе выводить строку "Неверный пароль!"
+
+const userLogin = prompt("ВВедите логин");
+
+
+// if (userLogin === "Админ") {
+//     console.log(userLogin);
+//     const password = prompt("Введите пароль");
+
+//     if (password === "Я главный") {
+//         console.log("Здравствуйте!");
+//     } else if(password === null){
+//         console.log("Отмена");
+//     } else {
+//         console.log("Неверный пароль!");
 //     }
-if(i % 2 === 0) {
-    continue 
+// } else if (userLogin === null) {
+// console.log("Отменено");
+// } else {
+//     console.log("Я Вас не знаю");
+// }
+
+switch (userLogin) {
+    case "Админ":
+        const password = prompt("Введите пароль");
+        switch (password) {
+            case "Я главный":
+                console.log("Здравствуйте!");
+                break;
+            
+            case null:
+                console.log("Отмена");
+break;
+            default:
+                console.log("Неверный пароль!");
+                
+        }
+        break;
+    
+    case null:
+        console.log("Отмена");
+        break;
+    
+    default:
+        console.log("Я Вас не знаю");
+        
 }
-totalSum +=i
-}
-    console.log(totalSum);
