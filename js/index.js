@@ -156,10 +156,9 @@
 
 // let userInput = prompt("Введите число больше 100");
 // let flag = false;
-<<<<<<< Updated upstream
 
 // while (userInput <= 100) {
-//     userInput = prompt("Введите число больше 100");    
+//     userInput = prompt("Введите число больше 100");
 // }
 
 // do {
@@ -171,58 +170,77 @@
 //     }
 // } while (flag);
 
-
 // console.log(`Вы ввели число ${userInput}`);
-
-
 
 //Напиши класс Client котрорый создает объект
 //со свойствами login email
 //Объяви приватные свойства #login #email,
 //доступ к которым сделай через геттер и сеттер login email
 
+// class Client {
+//     #login;
+//     #email;
 
-class Client {
-    #login;
-    #email;
-
-    constructor (login, email) {
-        this.#login = login;
-        this.#email = email;
-    }
-
-    get userData() {
-        return {
-            login: this.#login,
-            email: this.#email,
-        }
-    }
-
-    set userData({ newLogin, newEmail }) {
-        this.#login = newLogin;
-        this.#email = newEmail;
-    }
-}
-
-const clientNew = new Client("login", "email@mail.com");
-clientNew.userData = ({ newLogin: "login222", newEmail: "emai222@mail.com" });
-console.log(clientNew.userData);
-
-
-=======
-
-// // while (userInput <= 100) {
-// //     userInput = prompt("Введите число больше 100");
-// // }
-
-// do {
-//     if (userInput <= 100) {
-//         userInput = prompt("Введите число больше 100");
-//         flag = true;
-//     } else {
-//         flag = false;
+//     constructor (login, email) {
+//         this.#login = login;
+//         this.#email = email;
 //     }
-// } while (flag);
->>>>>>> Stashed changes
+
+//     get userData() {
+//         return {
+//             login: this.#login,
+//             email: this.#email,
+//         }
+//     }
+
+//     set userData({ newLogin, newEmail }) {
+//         this.#login = newLogin;
+//         this.#email = newEmail;
+//     }
+// }
+
+// const clientNew = new Client("login", "email@mail.com");
+// clientNew.userData = ({ newLogin: "login222", newEmail: "emai222@mail.com" });
+// console.log(clientNew.userData);
 
 // console.log(`Вы ввели число ${userInput}`);
+
+//Создать класс Worker у которого есть свойства name, age, salary.
+//У класса Worker есть метод getSalary.
+//Создать класс TopLevelWorker у которого есть свойство hierarchyLevel
+//и который наследует класс Worker, добавляя метод getHierarchyLevel
+
+// class Worker {
+//   constructor({ name, age, salary }) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+
+//   getSalary() {
+//     return this.salary;
+//   }
+// }
+
+// class TopLevelWorker extends Worker {
+//   constructor(obj, hierarchyLevel) {
+//     super(obj);
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+
+// const worker = {
+//   name: "mango",
+//   age: 28,
+//   salary: 1000,
+// };
+// const mangoWorker = new TopLevelWorker(worker, "top");
+
+// console.log(mangoWorker.salary);
+// console.log(mangoWorker.getHierarchyLevel());
+// console.log(TopLevelWorker.__proto__ === Worker.__proto__);
+// console.log(mangoWorker.__proto__ === TopLevelWorker.prototype);
+// console.log(TopLevelWorker.prototype.__proto__ === Worker.prototype);
