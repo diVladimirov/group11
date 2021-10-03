@@ -273,3 +273,29 @@
 //     return cars.filter(({onSale}) => onSale).sort((prevCar, nextCar) => nextCar.price - prevCar.price)
 // }
 // console.table(getSortedCarsOnSale(vehicles));
+
+// Необходимо написать функцию (isEqualSymbols), принимающую
+//в аргументах две строки и возвращающую true, если эти строки
+//состоят из идентичных букв и false в противном случае.
+//isEqualSymbols('кот', 'ток'); // выведет true
+//isEqualSymbols('кот', 'тик'); // выведет false
+
+// const isEqualSymbols = (str1, str2) => {
+//     const str1Array = str1.split("").filter((item, index, array)=> array.indexOf(item) === index);
+//     const str2Array = [...str2].filter((item, index, array)=> array.indexOf(item) === index);
+//     if (str1Array.length !== str2Array.length) return false;
+    
+//     for (let i = 0; i < str1Array.length; i++) {
+//         if (!str1Array.includes(str2Array[i])) {
+//             return false;
+//         };
+//     }
+
+//     return true;
+    
+// }
+
+
+
+// console.log(isEqualSymbols('кот', 'токк'));; // выведет true
+// console.log(isEqualSymbols('кот', 'тик'));; // выведет false
