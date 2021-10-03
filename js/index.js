@@ -5,7 +5,6 @@
 //то показать через alert: "Верно!"
 //в противном случае отобразить:"Не знаете? ECMAScript!"
 
-
 // const userInput = prompt("Какое официальное название JavaScript?");
 
 // if (userInput === "ECMAScript") {
@@ -15,13 +14,11 @@
 // }
 // console.log(userInput);1
 
-
 //2. Напишите программу, которая получит от пользователя
 //число (количество минут) и выведет в консоль
 //строку в формате часов и минут
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 // 70 === 01:10
-
 
 // const userInput = 70;
 
@@ -44,7 +41,6 @@
 
 // let totalSum = 0;
 
-
 // for(let i = max; i > min; i--){
 //     // console.log(i);
 //     // console.log(i % 2)
@@ -52,12 +48,11 @@
 // // totalSum += i;
 // //     }
 // if(i % 2 === 0) {
-//     continue 
+//     continue
 // }
 // totalSum +=i
 // }
 //     console.log(totalSum);
-
 
 //4. Напишите код, который будет спрашивать
 //логин с помощью prompt и логировать результат
@@ -75,7 +70,6 @@
 //иначе выводить строку "Неверный пароль!"
 
 // const userLogin = prompt("ВВедите логин");
-
 
 // if (userLogin === "Админ") {
 //     console.log(userLogin);
@@ -101,23 +95,23 @@
 //             case "Я главный":
 //                 console.log("Здравствуйте!");
 //                 break;
-            
+
 //             case null:
 //                 console.log("Отмена");
 // break;
 //             default:
 //                 console.log("Неверный пароль!");
-                
+
 //         }
 //         break;
-    
+
 //     case null:
 //         console.log("Отмена");
 //         break;
-    
+
 //     default:
 //         console.log("Я Вас не знаю");
-        
+
 // }
 
 //5. При загрузке страницы пользователю предлагается
@@ -150,7 +144,7 @@
 //         check = false;
 //         console.log(total);
 //     }
-// } while(check) 
+// } while(check)
 
 //6. Напишите цикл, который предлагает ввести
 //число больше 100 через prompt.
@@ -162,6 +156,7 @@
 
 // let userInput = prompt("Введите число больше 100");
 // let flag = false;
+<<<<<<< Updated upstream
 
 // while (userInput <= 100) {
 //     userInput = prompt("Введите число больше 100");    
@@ -214,4 +209,20 @@ clientNew.userData = ({ newLogin: "login222", newEmail: "emai222@mail.com" });
 console.log(clientNew.userData);
 
 
+=======
 
+// // while (userInput <= 100) {
+// //     userInput = prompt("Введите число больше 100");
+// // }
+
+// do {
+//     if (userInput <= 100) {
+//         userInput = prompt("Введите число больше 100");
+//         flag = true;
+//     } else {
+//         flag = false;
+//     }
+// } while (flag);
+>>>>>>> Stashed changes
+
+// console.log(`Вы ввели число ${userInput}`);
