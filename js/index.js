@@ -160,23 +160,58 @@
 //введёт число больше 100, либо не нажмет кнопку
 //Отмена в prompt
 
-let userInput = prompt("Введите число больше 100");
-let flag = false;
+// let userInput = prompt("Введите число больше 100");
+// let flag = false;
 
 // while (userInput <= 100) {
 //     userInput = prompt("Введите число больше 100");    
 // }
 
-do {
-    if (userInput <= 100) {
-        userInput = prompt("Введите число больше 100");
-        flag = true;
-    } else {
-        flag = false;
+// do {
+//     if (userInput <= 100) {
+//         userInput = prompt("Введите число больше 100");
+//         flag = true;
+//     } else {
+//         flag = false;
+//     }
+// } while (flag);
+
+
+// console.log(`Вы ввели число ${userInput}`);
+
+
+
+//Напиши класс Client котрорый создает объект
+//со свойствами login email
+//Объяви приватные свойства #login #email,
+//доступ к которым сделай через геттер и сеттер login email
+
+
+class Client {
+    #login;
+    #email;
+
+    constructor (login, email) {
+        this.#login = login;
+        this.#email = email;
     }
-} while (flag);
 
+    get userData() {
+        return {
+            login: this.#login,
+            email: this.#email,
+        }
+    }
 
-console.log(`Вы ввели число ${userInput}`);
+    set userData({ newLogin, newEmail }) {
+        this.#login = newLogin;
+        this.#email = newEmail;
+    }
+}
+
+const clientNew = new Client("login", "email@mail.com");
+clientNew.userData = ({ newLogin: "login222", newEmail: "emai222@mail.com" });
+console.log(clientNew.userData);
+
 
 
