@@ -245,8 +245,11 @@
 // console.log(mangoWorker.__proto__ === TopLevelWorker.prototype);
 // console.log(TopLevelWorker.prototype.__proto__ === Worker.prototype);
 
+
 //1.Реализовать фильтер по свойству amount и получить
 //только название модели
+
+
 
 // const vehicles = [
 //   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
@@ -281,7 +284,7 @@
 //     const str1Array = str1.split("").filter((item, index, array)=> array.indexOf(item) === index);
 //     const str2Array = [...str2].filter((item, index, array)=> array.indexOf(item) === index);
 //     if (str1Array.length !== str2Array.length) return false;
-
+    
 //     for (let i = 0; i < str1Array.length; i++) {
 //         if (!str1Array.includes(str2Array[i])) {
 //             return false;
@@ -289,52 +292,10 @@
 //     }
 
 //     return true;
-
+    
 // }
+
+
 
 // console.log(isEqualSymbols('кот', 'токк'));; // выведет true
 // console.log(isEqualSymbols('кот', 'тик'));; // выведет false
-
-//Собрать в allTopics массив всех предметов всех курсов
-const courses = [
-  {
-    name: "Basic HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "GitHub Desctop"],
-  },
-  {
-    name: "Intermediate HTML+CSS",
-    topics: ["VSCode", "HTML", "CSS", "GitHub", "Git", "Terminal"],
-  },
-  {
-    name: "Basic JavaScript",
-    topics: [
-      "VSCode",
-      "Type system",
-      "Loops",
-      "Function",
-      "Git",
-      "Conditions",
-      "Classes",
-      "GitHub",
-      "DOM",
-    ],
-  },
-  {
-    name: "Intermediate JavaScript",
-    topics: [
-      "VSCode",
-      "NPM",
-      "Bundlers",
-      "Transpiling",
-      "Git",
-      "Promises",
-      "AJAX",
-      "GitHub",
-    ],
-  },
-];
-
-const allTopics = courses
-  .flatMap(({ topics }) => topics)
-  .filter((course, index, array) => array.indexOf(course) === index);
-console.log(allTopics);
