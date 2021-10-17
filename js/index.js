@@ -301,31 +301,31 @@
 //* Четным li указать красный фон, нечетным -- синим
 //Для выполнения задания используйте createElement
 
-const Ref = document.querySelector(".js-container");
+// const Ref = document.querySelector(".js-container");
 
-const inputEl = document.createElement("input");
-const addButtonEl = document.createElement("button");
-addButtonEl.textContent = "Add";
-const removeButtonEl = document.createElement("button");
-removeButtonEl.textContent = "Remove";
-const listEl = document.createElement("ul");
+// const inputEl = document.createElement("input");
+// const addButtonEl = document.createElement("button");
+// addButtonEl.textContent = "Add";
+// const removeButtonEl = document.createElement("button");
+// removeButtonEl.textContent = "Remove";
+// const listEl = document.createElement("ul");
 
-Ref.append(inputEl, addButtonEl, removeButtonEl, listEl);
-console.log();
-const createItemEl = () => {
-  const itemEl = document.createElement("li");
-  itemEl.textContent = inputEl.value ? inputEl.value : "nothing";
-  listEl.append(itemEl);
-  console.log(listEl.children);
-  const isItemElEven = listEl.children.length % 2 === 0;
-  itemEl.classList.add(isItemElEven ? "even" : "odd");
-  inputEl.value = "";
-};
-addButtonEl.addEventListener("click", createItemEl);
+// Ref.append(inputEl, addButtonEl, removeButtonEl, listEl);
+// console.log();
+// const createItemEl = () => {
+//   const itemEl = document.createElement("li");
+//   itemEl.textContent = inputEl.value ? inputEl.value : "nothing";
+//   listEl.append(itemEl);
+//   console.log(listEl.children);
+//   const isItemElEven = listEl.children.length % 2 === 0;
+//   itemEl.classList.add(isItemElEven ? "even" : "odd");
+//   inputEl.value = "";
+// };
+// addButtonEl.addEventListener("click", createItemEl);
 
-removeButtonEl.addEventListener("click", () => {
-  listEl.removeChild(listEl.lastElementChild);
-});
+// removeButtonEl.addEventListener("click", () => {
+//   listEl.removeChild(listEl.lastElementChild);
+// });
 
 // .even {
 //   background-color: red;
@@ -336,3 +336,50 @@ removeButtonEl.addEventListener("click", () => {
 //   background-color: blueviolet;
 //   color: red;
 // }
+
+
+
+
+//Создать небольшую игру:)
+// - Изначально на экране пользователя будет отображаться
+//какая - то форма (круг, квадрат, прямоулольник)
+// - При нажатии на нее в рандомном порядке форма должна
+//меняться на другую
+// - Форма каждый раз должна появляться в разных местах на странице
+// - Цвет формы в рандомном порядке меняется,
+//используя цвета из заранее подготовленного массива
+
+
+const forms = [
+  'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
+  'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
+  'width: 200px; height: 100px; border-radius: 100px / 50px;',
+  'width: 150px; height: 100px; transform: skew(20deg);',
+];
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+const randomither = max => {
+  return Math.floor(Math.random() * max);
+};
+
+const Ref = document.querySelector(".js-container");
+
+const divEl = document.createElement("div");
+divEl.style.cssText = forms[0];
+divEl.style.background = getRandomHexColor();
+Ref.append(divEl);
+
+
+const changeDiv = () => {
+  divEl.style.cssText = forms[randomither(forms.length - 1)]
+  divEl.style.background = getRandomHexColor();
+  divEl.style.position = "absolute";
+  let height = 100 - divEl.clientHeight * 100 / document.documentElement.clientHeight;
+  divEl.style.top = `${randomither(height)}%`
+  let width = 100 - divEl.clientWidth * 100 / document.documentElement.clientWidth;
+  divEl.style.left = `${randomither(width)}%`
+}
+
+divEl.addEventListener("click", changeDiv);
