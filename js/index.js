@@ -350,36 +350,105 @@
 //используя цвета из заранее подготовленного массива
 
 
-const forms = [
-  'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
-  'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
-  'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
-  'width: 200px; height: 100px; border-radius: 100px / 50px;',
-  'width: 150px; height: 100px; transform: skew(20deg);',
-];
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
-const randomither = max => {
-  return Math.floor(Math.random() * max);
-};
+// const forms = [
+//   'width: 100px; height: 100px; border-width: 1px; border-color: #000000',
+//   'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000',
+//   'width: 150px; height: 100px; border-width: 1px; border-color: #000000',
+//   'width: 200px; height: 100px; border-radius: 100px / 50px;',
+//   'width: 150px; height: 100px; transform: skew(20deg);',
+// ];
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// }
+// const randomither = max => {
+//   return Math.floor(Math.random() * max);
+// };
 
-const Ref = document.querySelector(".js-container");
+// const Ref = document.querySelector(".js-container");
 
-const divEl = document.createElement("div");
-divEl.style.cssText = forms[0];
-divEl.style.background = getRandomHexColor();
-Ref.append(divEl);
+// const divEl = document.createElement("div");
+// divEl.style.cssText = forms[0];
+// divEl.style.background = getRandomHexColor();
+// Ref.append(divEl);
 
 
-const changeDiv = () => {
-  divEl.style.cssText = forms[randomither(forms.length - 1)]
-  divEl.style.background = getRandomHexColor();
-  divEl.style.position = "absolute";
-  let height = 100 - divEl.clientHeight * 100 / document.documentElement.clientHeight;
-  divEl.style.top = `${randomither(height)}%`
-  let width = 100 - divEl.clientWidth * 100 / document.documentElement.clientWidth;
-  divEl.style.left = `${randomither(width)}%`
-}
+// const changeDiv = () => {
+//   divEl.style.cssText = forms[randomither(forms.length - 1)]
+//   divEl.style.background = getRandomHexColor();
+//   divEl.style.position = "absolute";
+//   let height = 100 - divEl.clientHeight * 100 / document.documentElement.clientHeight;
+//   divEl.style.top = `${randomither(height)}%`
+//   let width = 100 - divEl.clientWidth * 100 / document.documentElement.clientWidth;
+//   divEl.style.left = `${randomither(width)}%`
+// }
 
-divEl.addEventListener("click", changeDiv);
+// divEl.addEventListener("click", changeDiv);
+
+
+
+// Создать форму авторизации.
+//В форме авторизации, пользователь должен ввести
+//логин и пароль для входа в систему.
+// - кнопка "Отправить" становится активной только в том случае
+//когда заполнены оба поля и пользователь отметил чекбокс
+// - поле логина должно содержать значение минимум 4 символа
+// - поле пароля от 3 до 30 символов
+// - если условия не соответствуют требованиям то
+//при потере фокуса поле ввода показывает ошибку
+// - после нажатия кнопки "Отправить" надо вывести сообщение
+//об успешной авторизации
+
+// const loginEl = document.querySelector("#login");
+// const loginInfoEl = document.querySelector('#loginInfo');
+
+// const passEl = document.querySelector('#password');
+// const passInfoEl = document.querySelector('#passwordInfo');
+// const checkEl = document.querySelector('#agreement');
+
+// const submitBtnEl = document.querySelector('#submitBtn');
+// const messageBoxEl = document.querySelector('#messageBox');
+
+// loginEl.addEventListener('blur', onInputBlur);
+// passEl.addEventListener('blur', onPassBlur)
+// loginEl.addEventListener('focus', () => {
+//   loginInfoEl.style.display = 'block';
+// })
+// passEl.addEventListener('focus', () => {
+//   passInfoEl.style.display = 'block';
+// })
+
+// submitBtnEl.addEventListener('click', onSubmitBtnElClick);
+
+// function onSubmitBtnElClick(event) {
+//   event.preventDefault();
+//   if (!loginEl.classList.contains('error') && !passEl.classList.contains('error') && checkEl.checked) {
+//     messageBoxEl.innerHTML = 'Вы успешно авторизованы';
+//     passEl.value = "";
+//    loginEl.value = "";
+//     checkEl.checked = false;
+//   }
+  
+// }
+
+// function onInputBlur (event) {
+//   const value = event.currentTarget.value;
+//   if (value.length < 4) {
+//     event.currentTarget.classList.add('error');
+//   } else {
+//     if (event.currentTarget.classList.contains('error')) {
+//       event.currentTarget.classList.remove('error');
+//     };
+//   }
+//   loginInfoEl.style.display = 'none';
+// }
+// function onPassBlur(event) {
+//   const value = event.currentTarget.value;
+//   if (value.length < 3 ||value.length > 30 ) {
+//     event.currentTarget.classList.add('error');
+//   } else {
+//     if (event.currentTarget.classList.contains('error')) {
+//       event.currentTarget.classList.remove('error');
+//     };
+//   }
+//   passInfoEl.style.display = 'none';
+// }
