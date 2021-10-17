@@ -245,11 +245,8 @@
 // console.log(mangoWorker.__proto__ === TopLevelWorker.prototype);
 // console.log(TopLevelWorker.prototype.__proto__ === Worker.prototype);
 
-
 //1.Реализовать фильтер по свойству amount и получить
 //только название модели
-
-
 
 // const vehicles = [
 //   { make: 'Honda', model: 'CR-V', type: 'suv', amount: 14, price: 24045, onSale: true },
@@ -284,7 +281,7 @@
 //     const str1Array = str1.split("").filter((item, index, array)=> array.indexOf(item) === index);
 //     const str2Array = [...str2].filter((item, index, array)=> array.indexOf(item) === index);
 //     if (str1Array.length !== str2Array.length) return false;
-    
+
 //     for (let i = 0; i < str1Array.length; i++) {
 //         if (!str1Array.includes(str2Array[i])) {
 //             return false;
@@ -292,10 +289,50 @@
 //     }
 
 //     return true;
-    
+
 // }
-
-
 
 // console.log(isEqualSymbols('кот', 'токк'));; // выведет true
 // console.log(isEqualSymbols('кот', 'тик'));; // выведет false
+
+//Создать маркированный список.
+//Создать кнопки "Add" "Remove", которые будут менять состав списка
+//Создать input с которого будем получать значение, которое будет в li
+//* Четным li указать красный фон, нечетным -- синим
+//Для выполнения задания используйте createElement
+
+const Ref = document.querySelector(".js-container");
+
+const inputEl = document.createElement("input");
+const addButtonEl = document.createElement("button");
+addButtonEl.textContent = "Add";
+const removeButtonEl = document.createElement("button");
+removeButtonEl.textContent = "Remove";
+const listEl = document.createElement("ul");
+
+Ref.append(inputEl, addButtonEl, removeButtonEl, listEl);
+console.log();
+const createItemEl = () => {
+  const itemEl = document.createElement("li");
+  itemEl.textContent = inputEl.value ? inputEl.value : "nothing";
+  listEl.append(itemEl);
+  console.log(listEl.children);
+  const isItemElEven = listEl.children.length % 2 === 0;
+  itemEl.classList.add(isItemElEven ? "even" : "odd");
+  inputEl.value = "";
+};
+addButtonEl.addEventListener("click", createItemEl);
+
+removeButtonEl.addEventListener("click", () => {
+  listEl.removeChild(listEl.lastElementChild);
+});
+
+// .even {
+//   background-color: red;
+//   color: blueviolet;
+// }
+
+// .odd {
+//   background-color: blueviolet;
+//   color: red;
+// }
