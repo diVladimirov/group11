@@ -391,60 +391,60 @@
 // - после нажатия кнопки "Отправить" надо вывести сообщение
 //об успешной авторизации
 
-const loginEl = document.querySelector("#login");
-const loginInfoEl = document.querySelector("#loginInfo");
+// const loginEl = document.querySelector("#login");
+// const loginInfoEl = document.querySelector("#loginInfo");
 
-const passEl = document.querySelector("#password");
-const passInfoEl = document.querySelector("#passwordInfo");
-const checkEl = document.querySelector("#agreement");
+// const passEl = document.querySelector("#password");
+// const passInfoEl = document.querySelector("#passwordInfo");
+// const checkEl = document.querySelector("#agreement");
 
-const submitBtnEl = document.querySelector("#submitBtn");
-const messageBoxEl = document.querySelector("#messageBox");
+// const submitBtnEl = document.querySelector("#submitBtn");
+// const messageBoxEl = document.querySelector("#messageBox");
 
-loginEl.addEventListener("blur", onInputBlur);
-passEl.addEventListener("blur", onPassBlur);
-loginEl.addEventListener("focus", () => {
-  loginInfoEl.style.display = "block";
-});
-passEl.addEventListener("focus", () => {
-  passInfoEl.style.display = "block";
-});
+// loginEl.addEventListener("blur", onInputBlur);
+// passEl.addEventListener("blur", onPassBlur);
+// loginEl.addEventListener("focus", () => {
+//   loginInfoEl.style.display = "block";
+// });
+// passEl.addEventListener("focus", () => {
+//   passInfoEl.style.display = "block";
+// });
 
-submitBtnEl.addEventListener("click", onSubmitBtnElClick);
+// submitBtnEl.addEventListener("click", onSubmitBtnElClick);
 
-function onSubmitBtnElClick(event) {
-  event.preventDefault();
-  if (
-    !loginEl.classList.contains("error") &&
-    !passEl.classList.contains("error") &&
-    checkEl.checked
-  ) {
-    messageBoxEl.innerHTML = "Вы успешно авторизованы";
-    passEl.value = "";
-    loginEl.value = "";
-    checkEl.checked = false;
-  }
-}
+// function onSubmitBtnElClick(event) {
+//   event.preventDefault();
+//   if (
+//     !loginEl.classList.contains("error") &&
+//     !passEl.classList.contains("error") &&
+//     checkEl.checked
+//   ) {
+//     messageBoxEl.innerHTML = "Вы успешно авторизованы";
+//     passEl.value = "";
+//     loginEl.value = "";
+//     checkEl.checked = false;
+//   }
+// }
 
-function onInputBlur(event) {
-  const value = event.currentTarget.value;
-  if (value.length < 4) {
-    event.currentTarget.classList.add("error");
-  } else {
-    if (event.currentTarget.classList.contains("error")) {
-      event.currentTarget.classList.remove("error");
-    }
-  }
-  loginInfoEl.style.display = "none";
-}
-function onPassBlur(event) {
-  const value = event.currentTarget.value;
-  if (value.length < 3 || value.length > 30) {
-    event.currentTarget.classList.add("error");
-  } else {
-    if (event.currentTarget.classList.contains("error")) {
-      event.currentTarget.classList.remove("error");
-    }
-  }
-  passInfoEl.style.display = "none";
-}
+// function onInputBlur(event) {
+//   const value = event.currentTarget.value;
+//   if (value.length < 4) {
+//     event.currentTarget.classList.add("error");
+//   } else {
+//     if (event.currentTarget.classList.contains("error")) {
+//       event.currentTarget.classList.remove("error");
+//     }
+//   }
+//   loginInfoEl.style.display = "none";
+// }
+// function onPassBlur(event) {
+//   const value = event.currentTarget.value;
+//   if (value.length < 3 || value.length > 30) {
+//     event.currentTarget.classList.add("error");
+//   } else {
+//     if (event.currentTarget.classList.contains("error")) {
+//       event.currentTarget.classList.remove("error");
+//     }
+//   }
+//   passInfoEl.style.display = "none";
+// }
